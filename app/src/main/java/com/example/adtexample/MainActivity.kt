@@ -1,7 +1,7 @@
 package com.example.adtexample
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.adtexample.ui.CharacterListFragment
 
 class MainActivity : AppCompatActivity() {

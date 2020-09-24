@@ -10,7 +10,6 @@ import com.example.adtexample.backend.RMServer
 import com.example.adtexample.model.RMCharacter
 import com.example.adtexample.model.responses.Meta
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class CharacterListViewModel : ViewModel() {

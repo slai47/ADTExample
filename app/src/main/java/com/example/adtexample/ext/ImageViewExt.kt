@@ -2,7 +2,6 @@ package com.example.adtexample.ext
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
-import androidx.databinding.BindingMethod
 import com.bumptech.glide.Glide
 
 @BindingAdapter("loadUrl")

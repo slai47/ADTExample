@@ -1,9 +1,6 @@
 package com.example.adtexample.backend
 
-import android.content.Context
 import com.example.adtexample.model.responses.CharacterResponseObject
-import okhttp3.OkHttpClient
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
