@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.adtexample.backend.RMServer
+import com.example.adtexample.backend.RMApi
 import com.example.adtexample.model.RMCharacter
 import com.example.adtexample.model.responses.Meta
 import kotlinx.coroutines.Dispatchers
@@ -27,7 +27,7 @@ class CharacterListViewModel : ViewModel() {
         currentPage = page
         progress.set(View.VISIBLE)
         viewModelScope.launch(Dispatchers.Default) {
-            val retrofit = RMServer.getInstance()
+            val retrofit = RMApi.getInstance()
             val result = retrofit.getCharacters(page)
 
             meta = result.info

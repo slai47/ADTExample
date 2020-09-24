@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="spanCount">1</integer>
-
+    <dimen name="imageSizeFull">200dp</dimen>
+    <dimen name="imageSizeSmall">80dp</dimen>
+    <dimen name="listPadding">15dp</dimen>
 </resources>

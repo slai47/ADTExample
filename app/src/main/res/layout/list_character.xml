@@ -12,11 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="20dp"
+        android:padding="@dimen/listPadding"
         >
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/imageSizeSmall"
+            android:layout_height="@dimen/imageSizeSmall"
             app:loadUrl="@{model.image}"
             android:layout_marginRight="10dp"
             />

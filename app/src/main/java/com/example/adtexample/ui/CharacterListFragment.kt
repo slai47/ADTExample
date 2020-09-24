@@ -24,7 +24,6 @@ class CharacterListFragment : Fragment() {
     }
 
     var adapter : CharacterAdapter? = null
-
     var manager : GridLayoutManager? = null
 
     lateinit var binding: FragmentCharacterListBinding
@@ -65,7 +64,11 @@ class CharacterListFragment : Fragment() {
                 it.setCharacters(viewModel.characters.value ?: listOf())
             }
         }
-        // Pagination libraries would be awesome to use but require more work. In the real job, pagination setup would be the best solution. This works
+        addScrollToLoad()
+    }
+
+    // Pagination libraries would be awesome to use but require more work. In the real job, pagination setup would be the best solution. This works
+    private fun addScrollToLoad() {
         fragment_characters_list.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -86,13 +89,13 @@ class CharacterListFragment : Fragment() {
         })
     }
 
-    val listCallback : (RMCharacter)-> Unit = {
+    private val listCallback : (RMCharacter)-> Unit = {
         val fragment = CharacterFragment()
         fragment.arguments = bundleOf(Pair(CharacterFragment.EXTRA_CHARACTER, it))
         fragmentManager?.beginTransaction()?.add(R.id.container, fragment)?.addToBackStack(it.name)?.commit()
     }
 
-    val characterObserver : Observer<List<RMCharacter>> = Observer {
+    private val characterObserver : Observer<List<RMCharacter>> = Observer {
         adapter?.addCharacters(it)
         viewModel.progress.set(View.GONE)
     }
